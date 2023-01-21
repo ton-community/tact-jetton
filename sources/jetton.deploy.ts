@@ -1,11 +1,24 @@
 import { beginCell, contractAddress, toNano, TonClient, TonClient4, Address,  WalletContractV4, internal, fromNano} from "ton";
 import {mnemonicToPrivateKey} from "ton-crypto";
-import { packAdd, init } from "./output/jetton_SampleJetton";
-import { printAddress, printDeploy, printHeader } from "./utils/print";
-import { randomAddress } from "./utils/randomAddress";
-import {SampleJetton_errors} from "./output/jetton_SampleJetton";
+import {JettonMetaDataKeys} from 'utils/jetton-helpers';
+
+
+
+
 
 (async () => { //need changes for jetton
+
+    // This is example data - Modify these params for your own jetton!
+    // - Data is stored on-chain (except for the image data itself)
+    // - Owner should usually be the deploying wallet's address.
+    const jettonParams = {
+        name: "MyJetton",
+        symbol: "JET1",
+        image: "https://www.linkpicture.com/q/download_183.png", // Image url
+        description: "My jetton",
+    };
+
+
 
     //create client for testnet Toncenter API
     const client = new TonClient({
