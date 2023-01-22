@@ -2,6 +2,10 @@ import { Sha256 } from "@aws-crypto/sha256-js";
 import { beginCell, Cell } from "ton";
 import { Dictionary } from "ton-core";
 
+const ONCHAIN_CONTENT_PREFIX = 0x00;
+const SNAKE_PREFIX = 0x00;
+const CELL_MAX_SIZE_BYTES = Math.floor((1023 - 8) / 8);
+
 function bufferToChunks(buff: Buffer, chunkSize: number) {
     let chunks: Buffer[] = [];
     while (buff.byteLength > 0) {
@@ -10,7 +14,6 @@ function bufferToChunks(buff: Buffer, chunkSize: number) {
     }
     return chunks;
 }
-const CELL_MAX_SIZE_BYTES = Math.floor((1023 - 8) / 8);
 
 export function makeSnakeCell(data: Buffer) {
     let chunks = bufferToChunks(data, CELL_MAX_SIZE_BYTES);
@@ -28,9 +31,6 @@ export function makeSnakeCell(data: Buffer) {
     }, beginCell());
     return b.endCell();
 }
-
-const ONCHAIN_CONTENT_PREFIX = 0x00;
-const SNAKE_PREFIX = 0x00;
 
 const sha256 = (str: string) => {
     const sha = new Sha256();
