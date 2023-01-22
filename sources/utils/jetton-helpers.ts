@@ -39,7 +39,7 @@ export function buildTokenMetadataCell(data: { [s: string]: string | undefined }
 
         //TODO need fix dictionary writing
         while (bufferToStore.length > 0) {
-            currentCell.storeBits(bufferToStore.read(CELL_MAX_SIZE_BYTES)) // how to read from Buffer???
+            currentCell.storeBuffer(bufferToStore.subarray(0, CELL_MAX_SIZE_BYTES)) // how to read from Buffer???
             //currentCell.bits.writeBuffer(bufferToStore.slice(0, CELL_MAX_SIZE_BYTES));
             //bufferToStore = bufferToStore.slice(CELL_MAX_SIZE_BYTES);
             if (bufferToStore.length > 0) {
