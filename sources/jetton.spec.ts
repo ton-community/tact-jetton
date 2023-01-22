@@ -1,6 +1,6 @@
 import { toNano, beginCell } from "ton-core";
 import { ContractSystem } from "ton-emulator";
-import {SampleJetton, SampleJetton_init} from './output/jetton_SampleJetton';
+import {SampleJetton} from './output/jetton_SampleJetton';
 
 describe('jetton', () => {
     it('should deploy', async () => {

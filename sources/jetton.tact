@@ -6,8 +6,6 @@ message Mint {
 
 contract SampleJetton with Jetton {
 
-// storage#_ balance:Grams owner_address:MsgAddressInt jetton_master_address:MsgAddressInt jetton_wallet_code:^Cell = Storage
-
     totalSupply: Int as coins;
     owner: Address;
     content: Cell?;
