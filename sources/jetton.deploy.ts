@@ -18,6 +18,7 @@ import {SampleJetton} from "./output/jetton_SampleJetton";
     })
 
     // Insert your test wallet's 24 words, make sure you have some test Toncoins on its balance. Every deployment spent 0.5 test toncoin.
+    let mnemonics = "multiply voice predict admit ...";
     // read more about wallet apps https://ton.org/docs/participate/wallets/apps#tonhub-test-environment
 
     let keyPair = await mnemonicToPrivateKey(mnemonics.split(" "));
