@@ -39,12 +39,12 @@ import {SampleJetton} from "./output/jetton_SampleJetton";
 
     const jettonParams = {
         name: "TactJet",
-        description: "Test tact contract - 4",
+        description: "This is description of Test tact jetton",
         image: "https://ipfs.io/ipfs/QmbPZjC1tuP6ickCCBtoTCQ9gc3RpkbKx7C1LMYQdcLwti" // Image url
     };
 
     // Owner should usually be the deploying wallet's address.
-    let owner = Address.parse('kQDND6yHEzKB82ZGRn58aY9Tt_69Ie_uz73e2VuuJ3fVVcxf');
+    let owner = Address.parse('kQDND6yHEzKB82ZGRn58aY9Tt_69Ie_u.............');
 
 
     // Create content Cell

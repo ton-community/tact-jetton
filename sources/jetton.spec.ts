@@ -1,4 +1,4 @@
-import { toNano, beginCell } from "ton-core";
+import { toNano, beginCell } from "ton";
 import { ContractSystem } from "ton-emulator";
 import {SampleJetton} from './output/jetton_SampleJetton';
 
@@ -8,8 +8,6 @@ describe('jetton', () => {
         // Create jetton
         let system = await ContractSystem.create();
         let owner = system.treasure('owner');
-
-        let content = beginCell().storeUint(1, 16).storeSlice('fff').endCell();
 
         let contract = system.open(await SampleJetton.fromInit(owner.address, null));
         let tracker = system.track(contract.address);
