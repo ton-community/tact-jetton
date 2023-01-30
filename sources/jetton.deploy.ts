@@ -18,7 +18,7 @@ import {SampleJetton} from "./output/jetton_SampleJetton";
     })
 
     // Insert your test wallet's 24 words, make sure you have some test Toncoins on its balance. Every deployment spent 0.5 test toncoin.
-    let mnemonics = "multiply voice predict admit ...";
+    let mnemonics = "multiply voice predict admit hockey fringe flat bike napkin child quote piano";
     // read more about wallet apps https://ton.org/docs/participate/wallets/apps#tonhub-test-environment
 
     let keyPair = await mnemonicToPrivateKey(mnemonics.split(" "));
@@ -29,7 +29,7 @@ import {SampleJetton} from "./output/jetton_SampleJetton";
 
     //Create deployment wallet contract
     let wallet = WalletContractV4.create({ workchain, publicKey: keyPair.publicKey});
-    let contract = client.open(wallet);
+    let contract = client4.open(wallet);
 
     // Get deployment wallet balance
     let balance: bigint = await contract.getBalance();
@@ -44,7 +44,7 @@ import {SampleJetton} from "./output/jetton_SampleJetton";
     };
 
     // Owner should usually be the deploying wallet's address.
-    let owner = Address.parse('kQDND6yHEzKB82ZGRn58aY9Tt_69Ie_u.............');
+    let owner = Address.parse('kQDND6yHEzKB82ZGRn58aY9Tt_69Ie_uz73e2V...');
 
 
     // Create content Cell
